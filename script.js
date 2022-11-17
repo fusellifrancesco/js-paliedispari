@@ -59,16 +59,18 @@ let pariDispariUtente = prompt("PARI o DISPARI?");
 let inputUtenteMaiuscolo = pariDispariUtente.toUpperCase();
 let numeroUtente = parseInt(prompt("Inserisci un numero tra 1 e 5"));
 let numeroComputer = generatoreNumero();
-let somma = numeroUtente + numeroComputer
+let somma = numeroUtente + numeroComputer;
 
 console.log("il numero generato dal computer è: " + numeroComputer);
 console.log("il numero generato dall'utente è: " + numeroUtente);
-console.log("l'utente ha scelto: " + inputUtenteMaiuscolo)
-console.log("la somma dei due numeri è: " + risultatoPariDispari(somma))
+console.log("l'utente ha scelto: " + inputUtenteMaiuscolo);
+console.log("la somma dei due numeri è: " + risultatoPariDispari(somma) + " = " + somma);
 
 risultatoPariDispari(somma);
 
-if (inputUtenteMaiuscolo == "PARI" && risultatoPariDispari(somma) == 0){
+if (inputUtenteMaiuscolo == "DISPARI" && risultatoPariDispari(somma) == "DISPARI"){
+    console.log("HAI VINTO");
+} else if (inputUtenteMaiuscolo == "PARI" && risultatoPariDispari(somma) == "PARI"){
     console.log("HAI VINTO");
 } else {
     console.log("HAI PERSO");
@@ -91,9 +93,9 @@ function generatoreNumero(){
 
 function risultatoPariDispari(risultato){ 
         if (risultato % 2 != 0){
-            return risultato;
+            return "DISPARI";
         } else {
-            return risultato;
+            return "PARI";
         }
 }
 
